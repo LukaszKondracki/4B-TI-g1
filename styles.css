@@ -91,6 +91,12 @@ nav > ul {
     transition: background-color 200ms ease-in-out;
 }
 
+.main-nav-item > a,
+.side-nav-item > a {
+    color: var(--fg);
+    text-decoration: none;
+}
+
 #content {
     grid-row: 2;
     grid-column: 2;
