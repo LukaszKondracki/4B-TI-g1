@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
-:root {
+html {
     --pad: 10px;
     --bg: rgb(27, 27, 27);
     --bg2: rgb(43, 41, 44);
     --fg: aliceblue;
     --fg2: rgb(131, 135, 139);
     --acc: orange;
+}
+
+html.light {
+    --pad: 10px;
+    --bg: rgb(165, 192, 173);
+    --bg2: rgb(203, 225, 217);
+    --fg: rgb(23, 24, 25);
+    --fg2: rgb(75, 82, 88);
+    --acc: rgb(47, 255, 0);
 }
 
 body {
@@ -117,8 +126,25 @@ h1 {
     grid-row: 3;
     grid-column: 1 / 4;
     /* background-color: blue; */
-    color: aliceblue;
+    color: var(--fg);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+#theme {
+    position: fixed;
+    bottom: calc(var(--pad) * 2);
+    right: calc(var(--pad) * 2);
+    width: calc(var(--pad) * 5);
+    height: calc(var(--pad) * 5);
+    border-radius: 50%;
+
+    background-color: var(--bg);
+    border: 1px solid var(--fg2);
+    cursor: pointer;
+}
+
+#theme:hover {
+    border-color: var(--acc);
 }
