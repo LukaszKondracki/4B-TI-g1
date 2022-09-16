@@ -1,21 +1,25 @@
-const button = document.getElementById('theme');
-const html = document.querySelector('html');
+(() => {
 
-const store = window.localStorage;
+    const button = document.getElementById('theme');
+    const html = document.querySelector('html');
 
-html.className = store.getItem('theme');
+    const store = window.localStorage;
 
-button.addEventListener('click', () => {
+    html.className = store.getItem('theme');
 
-    const isLight = html.classList.contains('light');
+    button.addEventListener('click', () => {
 
-    if (isLight) {
-        html.classList.remove('light');
-        button.innerText = '🌞';
-        store.setItem('theme', 'dark');
-    } else {
-        html.classList.add('light');
-        button.innerText = '🌚';
-        store.setItem('theme', 'light');
-    }
-});
+        const isLight = html.classList.contains('light');
+
+        if (isLight) {
+            html.classList.remove('light');
+            button.innerText = '🌞';
+            store.setItem('theme', 'dark');
+        } else {
+            html.classList.add('light');
+            button.innerText = '🌚';
+            store.setItem('theme', 'light');
+        }
+    });
+
+})();
