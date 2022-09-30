@@ -11,22 +11,7 @@
 </head>
 <body>
 
-    <nav id="nav" class="pane">
-        <ul class="main-nav">
-            <li class="main-nav-item">
-                <a href="index.html">Logo</a>
-            </li>
-            <li class="main-nav-item">
-                <a href="index.html">Home</a>
-            </li>
-            <li class="main-nav-item">
-                <a href="contact.html">Contact</a>
-            </li>
-            <li class="main-nav-item">
-                <a href="comments.html">Comments</a>
-            </li>
-        </ul>
-    </nav>
+    <?php require 'elements/navigation.php' ?>
 
     <nav id="side-nav" class="pane">
         <ul class="side-nav">
@@ -37,6 +22,7 @@
             <li class="side-nav-item">qwerq</li>
         </ul>
     </nav>
+
 
     <main id="content" class="pane">
         <h1>My Cool Website</h1>
@@ -53,17 +39,7 @@
 
     </main>
 
-    <footer id="footer" class="pane">
-        <div class="copyright">Copyright &copy; 2022</div>
-        <div class="about">This is my super cool website 🚀</div>
-        <div class="contact">foobar@example.com</div>
-    </footer>
-
-    <button type="button" id="theme">🌞</button>
-
-
-<!-- Load Javascript -->
-<script src="themeswap.js"></script>
+    <?php require 'elements/footer.php' ?>
     
 </body>
 </html>

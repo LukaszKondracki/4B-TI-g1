@@ -12,7 +12,28 @@
 </head>
 <body>
 
-    <form action="" method="GET" id="form">
+    <?php
+        $name = null;
+        if (!empty($_POST)) {
+            $name = $_POST['name'];
+
+            $now = date('Ymd_His');
+            $file = "submissions/{$now}_{$name}.txt";
+            $body = json_encode($_POST, JSON_PRETTY_PRINT);
+
+            file_put_contents($file, $body);
+        }
+    ?>
+    
+    <?php require 'elements/navigation.php' ?>
+
+    <form action="" method="POST" id="form">
+
+        <ul id="errors"></ul>
+
+        <?php if ($name !== null): ?>
+            <span id="thankyou">Thank you for contacting us, <?=$name?>!</span>
+        <?php endif; ?>
 
         <label for="name">Name</label>
         <input type="text" name="name" id="name" class="input" >
@@ -28,6 +49,9 @@
 
         <input type="submit" value="Send" class="input">
     </form>
+
+    
+    <?php require 'elements/footer.php' ?>
     
 <script src="contact.js"></script>
 
