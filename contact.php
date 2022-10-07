@@ -19,7 +19,7 @@
     if (!empty($_POST)) {
         $name = $_POST['name'];
 
-        $res = save_mysqli_p($name, $_POST['email'], $_POST['body']);
+        $res = save_pdo($name, $_POST['email'], $_POST['body']);
         echo $res ? 'success' : 'fail';
     }
     ?>
