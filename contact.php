@@ -13,16 +13,15 @@
 <body>
 
     <?php
-        $name = null;
-        if (!empty($_POST)) {
-            $name = $_POST['name'];
+    require 'src/contact_db.php';
 
-            $now = date('Ymd_His');
-            $file = "submissions/{$now}_{$name}.txt";
-            $body = json_encode($_POST, JSON_PRETTY_PRINT);
+    $name = null;
+    if (!empty($_POST)) {
+        $name = $_POST['name'];
 
-            file_put_contents($file, $body);
-        }
+        $res = save_mysqli_p($name, $_POST['email'], $_POST['body']);
+        echo $res ? 'success' : 'fail';
+    }
     ?>
     
     <?php require 'elements/navigation.php' ?>
